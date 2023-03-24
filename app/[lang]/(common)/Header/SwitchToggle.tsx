@@ -1,12 +1,13 @@
 'use client';
 
-import type {ReactElement} from 'react';
+import type {MouseEventHandler, ReactElement} from 'react';
+
 import clsx from 'clsx';
 import {twMerge} from 'tailwind-merge';
 
 type Props = {
   isDark: boolean;
-  onToggle: () => void;
+  onToggle?: MouseEventHandler;
 };
 
 export default function SwitchToggle({isDark, onToggle}: Props): ReactElement {
@@ -14,6 +15,7 @@ export default function SwitchToggle({isDark, onToggle}: Props): ReactElement {
     <div className="flex">
       <label className="inline-flex relative items-center cursor-pointer">
         <input
+          title="checkbox"
           type="checkbox"
           className="sr-only peer"
           checked={isDark}

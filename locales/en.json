@@ -1,6 +1,8 @@
 {
   "nav": {
     "title": "Prisma Nextjs RSC",
+    "users": "Users",
+    "posts": "Posts",
     "signIn": "Sign in",
     "signOut": "Sign out",
     "github": "Github"

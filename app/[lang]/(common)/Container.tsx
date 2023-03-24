@@ -1,11 +1,11 @@
 'use client';
 
-import clsx from 'clsx';
-import type {ReactElement} from 'react';
-import {useState} from 'react';
-import type {Translates} from '../../../src/localization';
 import Header from './Header';
+import type {ReactElement} from 'react';
 import Sidebar from './Sidebar';
+import type {Translates} from '../../../src/localization';
+import clsx from 'clsx';
+import {useState} from 'react';
 
 type Props = {
   t: Translates['nav'];
@@ -35,7 +35,7 @@ export default function Container(props: Props): ReactElement {
         isOpen={isOpen}
         setIsOpen={setIsOpen}
       />
-      <div className={clsx('flex-1', 'flex flex-row')}>
+      <div className={clsx('flex-1', 'flex flex-row relative')}>
         {isOpen ? <Sidebar t={t} lang={lang} /> : null}
         {children}
       </div>

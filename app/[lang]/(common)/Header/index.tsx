@@ -42,7 +42,7 @@ function NavMenus(
 
   return (
     <div className={clsx('flex flex-row-reverse')}>
-      <div className="cursor-pointer">
+      <div className="cursor-pointer p-4" onClick={() => setIsOpen(!isOpen)}>
         <HamburgerMenu
           isOpen={isOpen}
           menuClicked={() => setIsOpen(!isOpen)}
@@ -71,12 +71,12 @@ export default function Header(props: Props): ReactElement {
   return (
     <header
       className={clsx(
-        'h-[56px] decoration-0 bg-basic sticky',
+        'h-[56px] decoration-0 bg-basic sticky border border-b-[0.3px] border-border-light dark:border-border-dark',
         'flex flex-row items-center justify-between',
-        'px-[28px]',
+        'pl-3 pr-7',
       )}
     >
-      <div className={clsx('flex-1 h-14', 'flex flex-row items-center')}>
+      <div className={clsx('flex-1 h-14 ', 'flex flex-row items-center')}>
         <NavMenus
           {...props}
           navLinks={navLinks}
@@ -97,7 +97,6 @@ export default function Header(props: Props): ReactElement {
             <H1
               className={clsx(
                 'body3 font-bold ml-[6px] mr-[12px]',
-                'max-[480px]:hidden',
                 inter.className,
               )}
             >

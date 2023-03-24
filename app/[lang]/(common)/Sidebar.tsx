@@ -1,30 +1,40 @@
 'use client';
 
-import clsx from 'clsx';
-import Link from 'next/link';
 import {usePathname, useRouter} from 'next/navigation';
+
+import Link from 'next/link';
+import type {NavLink} from './Header';
 import type {ReactElement} from 'react';
 import type {Translates} from '../../../src/localization';
-import type {NavLink} from './Header';
+import clsx from 'clsx';
 
 type Props = {
   t: Translates['nav'];
   lang: 'en' | 'ko';
 };
 
-export default function Sidebar({lang}: Props): ReactElement {
+export default function Sidebar({t, lang}: Props): ReactElement {
   const pathname = usePathname();
   const router = useRouter();
-  const navLinks: NavLink[] = [];
+  const navLinks: NavLink[] = [
+    {
+      name: t.users,
+      path: '/users',
+    },
+    {
+      name: t.posts,
+      path: '/posts',
+    },
+  ];
 
   return (
-    <aside className={clsx('w-[360px]', 'flex flex-col')}>
+    <aside className={clsx('w-[280px] bg-basic py-2', 'flex flex-col')}>
       {navLinks.map((link, index) => {
         return (
           <ul
             key={link.name}
             className={clsx(
-              'pointer hover:opacity-70 hover:translate-y-[2px]',
+              'h-12 pointer hover:bg-paper hover:opacity-70',
               'flex items-center',
             )}
           >
