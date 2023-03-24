@@ -1,6 +1,6 @@
 import type {CSSProperties, FC, ReactElement} from 'react';
 
-import {Inter} from '@next/font/google';
+import {Inter} from 'next/font/google';
 import {cloneElement} from 'react';
 import clsx from 'clsx';
 

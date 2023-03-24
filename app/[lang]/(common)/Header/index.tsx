@@ -3,10 +3,11 @@
 import type {Dispatch, ReactElement, SetStateAction} from 'react';
 import {isDarkMode, toggleTheme} from '../../../../src/utils/theme';
 import {useEffect, useState} from 'react';
+
 import Github from 'public/assets/github.svg';
 import {H1} from '../../../../src/components/Typography';
 import HamburgerMenu from 'react-hamburger-menu';
-import {Inter} from '@next/font/google';
+import {Inter} from 'next/font/google';
 import Link from 'next/link';
 import Logo from 'public/assets/logo.svg';
 import SwitchToggle from './SwitchToggle';
