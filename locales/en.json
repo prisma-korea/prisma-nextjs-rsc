@@ -1,5 +1,6 @@
 {
   "nav": {
+    "title": "Prisma Nextjs RSC",
     "signIn": "Sign in",
     "signOut": "Sign out",
     "github": "Github"
@@ -17,7 +18,6 @@
     "notValidEmail": "Not a valid email address"
   },
   "index": {
-    "title": "Prisma Nextjs RSC",
     "worksNormally": "Works normally"
   },
   "home": {

@@ -3,9 +3,6 @@
 import type {Dispatch, ReactElement, SetStateAction} from 'react';
 import {isDarkMode, toggleTheme} from '../../../../src/utils/theme';
 import {useEffect, useState} from 'react';
-import {usePathname, useRouter} from 'next/navigation';
-
-import Button from '../Button';
 import Github from 'public/assets/github.svg';
 import {H1} from '../../../../src/components/Typography';
 import HamburgerMenu from 'react-hamburger-menu';
@@ -25,12 +22,14 @@ export type NavLink = {
 };
 
 type Props = {
+  isOpen: boolean;
+  setIsOpen: (isOpen: boolean) => void;
   t: Translates['nav'];
   lang: 'en' | 'ko';
   langs: {en: string; ko: string};
 };
 
-function DesktopNavMenus(
+function NavMenus(
   props: Props & {
     login: string;
     isDark: boolean;
@@ -38,98 +37,14 @@ function DesktopNavMenus(
     navLinks: NavLink[];
   },
 ): ReactElement {
-  const {t, lang, login, isDark, setIsDark, navLinks} = props;
-  const pathname = usePathname();
-  const router = useRouter();
+  const {isDark, isOpen, setIsOpen} = props;
 
   return (
-    <div
-      className={clsx('flex-1 justify-between items-center', 'max-md:hidden')}
-    >
-      <nav className="mr-[6px] flex flex-row max-[480px]:ml-2">
-        {navLinks.map((link, index) => {
-          return (
-            <ul
-              key={link.name}
-              className={clsx(
-                'hover:opacity-70 hover:translate-y-[2px]',
-                index !== 0 && 'ml-3',
-              )}
-            >
-              <Link
-                href={`${lang}/${link.path}`}
-                className={clsx(
-                  'text-body4 truncate',
-                  pathname?.includes(link.path) ? 'opacity-100' : 'opacity-30',
-                )}
-              >
-                <li
-                  key={index}
-                  className={clsx('text-ellipsis', 'body3 font-bold')}
-                >
-                  {link.name}
-                </li>
-              </Link>
-            </ul>
-          );
-        })}
-      </nav>
-      <div className={clsx('flex flex-row items-center')}>
-        {/* <LocaleSwitcher languages={langs} /> */}
-        <Button
-          text={!!login ? t.signOut : t.signIn}
-          className="mr-2 py-2 px-3"
-          classNames={{
-            text: 'body3 truncate',
-          }}
-          onClick={() => {
-            if (!!login) {
-              return;
-            }
-
-            router.push(`/sign-in`);
-          }}
-        />
-        <div className="ml-[6px] mr-2">
-          <a
-            href="https://github.com/prisma-korea/prisma-nextjs-rsc"
-            aria-label="prisma-nextjs-rsc"
-          >
-            <Github className="h-6 body2" />
-          </a>
-        </div>
-        <SwitchToggle
-          isDark={isDark}
-          onToggle={() => {
-            toggleTheme();
-            setIsDark(!isDark);
-          }}
-        />
-      </div>
-    </div>
-  );
-}
-
-function MobileNavMenus(
-  props: Props & {
-    login: string;
-    isDark: boolean;
-    setIsDark: Dispatch<SetStateAction<boolean>>;
-    navLinks: NavLink[];
-  },
-): ReactElement {
-  const {t, lang, login, isDark, setIsDark, navLinks} = props;
-  const pathname = usePathname();
-  const router = useRouter();
-
-  const [isNavCollapsed, setIsNavCollapsed] = useState(true);
-
-  return (
-    <div className={clsx('md:hidden flex-1', 'flex flex-row-reverse')}>
+    <div className={clsx('flex flex-row-reverse')}>
       <div className="cursor-pointer">
         <HamburgerMenu
-          isOpen={!isNavCollapsed}
-          menuClicked={() => setIsNavCollapsed(!isNavCollapsed)}
+          isOpen={isOpen}
+          menuClicked={() => setIsOpen(!isOpen)}
           width={18}
           height={12}
           strokeWidth={2}
@@ -139,86 +54,6 @@ function MobileNavMenus(
           color={isDark ? 'white' : 'black'}
         />
       </div>
-      <nav
-        className={clsx(
-          'absolute top-14 right-0 w-full bg-basic pb-2',
-          'flex flex-col',
-          isNavCollapsed ? 'hidden' : 'flex',
-        )}
-      >
-        {navLinks.map((link, index) => {
-          return (
-            <ul
-              key={link.name}
-              className={clsx(
-                'pointer hover:opacity-70 hover:translate-y-[2px]',
-                'flex items-center',
-              )}
-            >
-              <Link
-                href={`${lang}/${link.path}`}
-                className={clsx(
-                  'text-body4 truncate flex-1 h-10 px-8',
-                  'flex items-center',
-                  'hover:opacity-100',
-                  pathname?.includes(link.path) ? 'opacity-100' : 'opacity-30',
-                )}
-              >
-                <li
-                  key={index}
-                  className={clsx('text-ellipsis', 'body3 font-bold')}
-                >
-                  {link.name}
-                </li>
-              </Link>
-            </ul>
-          );
-        })}
-        <div
-          className={clsx(
-            'h-10 pl-6 pr-8',
-            'flex flex-column items-center justify-between',
-          )}
-        >
-          <div className={clsx('ml-[6px] mr-4', 'flex flex-row')}>
-            <a
-              href="https://github.com/prisma-korea/prisma-nextjs-rsc"
-              className="flex flex-row items-center"
-            >
-              <Github className="h-6 body2 mr-2" />
-              <span
-                className={clsx(
-                  'body3 font-bold opacity-30',
-                  'hover:opacity-70',
-                )}
-              >
-                {t.github}
-              </span>
-            </a>
-          </div>
-          <SwitchToggle
-            isDark={isDark}
-            onToggle={() => {
-              toggleTheme();
-              setIsDark(!isDark);
-            }}
-          />
-        </div>
-        <Button
-          text={!!login ? t.signOut : t.signIn}
-          className="py-2 px-3 mx-8 my-2"
-          classNames={{
-            text: 'body3 truncate',
-          }}
-          onClick={() => {
-            if (!!login) {
-              return;
-            }
-
-            router.push(`/sign-in`);
-          }}
-        />
-      </nav>
     </div>
   );
 }
@@ -240,19 +75,20 @@ export default function Header(props: Props): ReactElement {
         'px-[28px]',
       )}
     >
-      <div
-        className={clsx(
-          'flex-1 h-14',
-          'flex flex-row items-center',
-          'justify-between',
-        )}
-      >
+      <div className={clsx('flex-1 h-14', 'flex flex-row items-center')}>
+        <NavMenus
+          {...props}
+          navLinks={navLinks}
+          login={login}
+          isDark={isDark}
+          setIsDark={setIsDark}
+        />
         <div
           className={clsx(
-            'decoration-0 transition duration-300',
+            'decoration-0 transition duration-300 ml-3',
             'hover:opacity-70 hover:translate-y-2px',
-            'active:opacity-100',
-            'flex flex-row items-center',
+            'active:opacity-100 flex-1',
+            'flex flex-row items-center justify-between',
           )}
         >
           <Link href={`${lang}/`} className="flex flex-row items-center">
@@ -264,24 +100,27 @@ export default function Header(props: Props): ReactElement {
                 inter.className,
               )}
             >
-              prisma-nextjs-rsc
+              {t.title}
             </H1>
           </Link>
+          <div className={clsx('flex flex-row items-center')}>
+            <div className="ml-[6px] mr-2">
+              <a
+                href="https://github.com/prisma-korea/prisma-nextjs-rsc"
+                aria-label="prisma-nextjs-rsc"
+              >
+                <Github className="h-6 body2" />
+              </a>
+            </div>
+            <SwitchToggle
+              isDark={isDark}
+              onToggle={() => {
+                toggleTheme();
+                setIsDark(!isDark);
+              }}
+            />
+          </div>
         </div>
-        <DesktopNavMenus
-          {...props}
-          navLinks={navLinks}
-          login={login}
-          isDark={isDark}
-          setIsDark={setIsDark}
-        />
-        <MobileNavMenus
-          {...props}
-          navLinks={navLinks}
-          login={login}
-          isDark={isDark}
-          setIsDark={setIsDark}
-        />
       </div>
     </header>
   );
