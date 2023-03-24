@@ -1,5 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  i18n: {
+    locales: ['en', 'ko'],
+    defaultLocale: 'en',
+  },
   swcMinify: true,
   reactStrictMode: true,
   experimental: {appDir: true},
