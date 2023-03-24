@@ -14,7 +14,7 @@ export default async function Page({
 
   return (
     <div className={clsx('flex-1 w-screen bg-paper', 'flex flex-col')}>
-      <p>Home</p>
+      <p className={clsx('p-8 text-basic')}>{home.title}</p>
     </div>
   );
 }
