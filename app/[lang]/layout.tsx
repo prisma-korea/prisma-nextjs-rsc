@@ -3,11 +3,8 @@ import '../../styles/output.css';
 
 import type {ReactElement, ReactNode} from 'react';
 
-import Header from './(common)/Header';
 import type {Locale} from '~/i18n';
 import RootProvider from '../../src/components/RootProvider';
-import clsx from 'clsx';
-import {getTranslates} from '../../src/localization';
 
 type Props = {
   children: ReactNode;
@@ -20,8 +17,6 @@ export default async function RootLayout(props: Props): Promise<ReactElement> {
     children,
   } = props;
 
-  const {langs, nav} = await getTranslates(lang);
-
   return (
     <html lang={lang} className="dark">
       <title>prisma-nextjs-rsc</title>
@@ -29,26 +24,7 @@ export default async function RootLayout(props: Props): Promise<ReactElement> {
       <meta name="description" content="All stats for developers" />
       <link rel="icon" href="/favicon.ico" />
       <body>
-        <RootProvider initialLocale={lang}>
-          <main
-            className={clsx(
-              'text-center flex-1 self-stretch relative',
-              'flex flex-col-reverse',
-            )}
-          >
-            <div className={clsx('h-[calc(100vh-56px)]', 'flex')}>
-              {children}
-            </div>
-            <Header
-              t={nav}
-              lang={lang}
-              langs={{
-                en: langs.en,
-                ko: langs.ko,
-              }}
-            />
-          </main>
-        </RootProvider>
+        <RootProvider initialLocale={lang}>{children}</RootProvider>
       </body>
     </html>
   );

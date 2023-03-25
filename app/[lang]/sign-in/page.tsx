@@ -1,4 +1,4 @@
-import {Inter} from '@next/font/google';
+import {Inter} from 'next/font/google';
 import type {Locale} from '~/i18n';
 import Logo from 'public/assets/logo.svg';
 import type {ReactElement} from 'react';

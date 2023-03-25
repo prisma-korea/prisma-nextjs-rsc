@@ -1,5 +1,8 @@
 {
   "nav": {
+    "title": "Prisma Nextjs RSC",
+    "users": "사용자",
+    "posts": "포스트",
     "signIn": "로그인",
     "signOut": "로그아웃",
     "github": "깃허브"
@@ -17,7 +20,6 @@
     "notValidEmail": "유효하지 않은 이메일 주소"
   },
   "index": {
-    "title": "Prisma Nextjs RSC",
     "worksNormally": "정상 작동"
   },
   "home": {
@@ -25,5 +27,11 @@
   },
   "signIn": {
     "signIn": "로그인"
+  },
+  "users": {
+    "title": "유저"
+  },
+  "posts": {
+    "title": "포스트"
   }
 }

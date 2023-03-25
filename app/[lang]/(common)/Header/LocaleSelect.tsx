@@ -30,7 +30,7 @@ export default function LocaleSwitcher({languages}: Props): ReactElement {
   return (
     <div>
       <select
-        name="lang-switcher"
+        title="lang-switcher"
         onChange={handleChange}
         defaultValue={curLocale}
         style={{fontSize: 12}}

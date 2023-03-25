@@ -3,13 +3,6 @@ import {i18n} from '../src/i18n';
 
 import type {NextApiRequest} from 'next';
 import {acceptLanguage} from 'next/dist/server/accept-header';
-import {init} from '@amplitude/analytics-node';
-
-const {AMPLITUDE_KEY} = process.env;
-
-export const initNodeAmplitude = (): void => {
-  init(<string>AMPLITUDE_KEY);
-};
 
 export function currentLocale(req: NextApiRequest): Locale {
   if (!i18n) {
