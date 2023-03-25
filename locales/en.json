@@ -27,5 +27,11 @@
   },
   "signIn": {
     "signIn": "Sign in"
+  },
+  "users": {
+    "title": "Users"
+  },
+  "posts": {
+    "title": "Posts"
   }
 }
