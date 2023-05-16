@@ -1,3 +1,9 @@
+const withPWA = require('next-pwa')({
+  // https://github.com/GoogleChrome/workbox/issues/1790#issuecomment-620894023
+  disable: process.env.NODE_ENV !== 'production',
+  dest: 'public',
+});
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   i18n: {
@@ -15,16 +21,6 @@ const nextConfig = {
 
     return config;
   },
-  images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'avatars.githubusercontent.com',
-        port: '',
-        pathname: '/u/**',
-      },
-    ],
-  },
   async headers() {
     return [
       {
@@ -40,4 +36,4 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+module.exports = withPWA(nextConfig);

@@ -1,9 +1,13 @@
-import {Inter} from 'next/font/google';
-import type {Locale} from '~/i18n';
-import Logo from 'public/assets/logo.svg';
 import type {ReactElement} from 'react';
 import clsx from 'clsx';
+import {Inter} from 'next/font/google';
+import Logo from 'public/assets/logo.svg';
+
 import {getTranslates} from '../../../src/localization';
+
+import SocialButtons from './SocialButton';
+
+import type {Locale} from '~/i18n';
 
 const inter = Inter({subsets: ['latin']});
 
@@ -15,6 +19,29 @@ export default async function Page({
   params: {lang},
 }: Props): Promise<ReactElement> {
   const {signIn} = await getTranslates(lang);
+
+  // Next.js intl interpolation is not currently supported as of 2023-03-12.
+  const renderAgreements = (texts: string): (ReactElement | string)[] => {
+    return texts.split(/[{}]/).map((str, i) =>
+      i % 2 === 0 ? (
+        str
+      ) : (
+        <a
+          href={
+            str === 'termsOfService'
+              ? 'https://legacy.dooboolab.com/termsofservice'
+              : str === 'privacyPolicy'
+              ? 'https://legacy.dooboolab.com/privacyandpolicy'
+              : ''
+          }
+          key={str}
+          className="underline underline-offset-[1px]"
+        >
+          {signIn[str as keyof typeof signIn]}
+        </a>
+      ),
+    );
+  };
 
   return (
     <div
@@ -32,6 +59,18 @@ export default async function Page({
         )}
       >
         <Logo className="h-20 mb-2 text-brand" />
+        <p className={clsx('text-brand pb-28', inter.className)}>
+          github-stats
+        </p>
+        <SocialButtons t={signIn} />
+        <p
+          className={clsx(
+            'text-placeholder text-body4 leading-4 text-center mt-2 break-normal',
+            inter.className,
+          )}
+        >
+          {renderAgreements(signIn.byProceedingToTheNextStep)}
+        </p>
       </div>
     </div>
   );

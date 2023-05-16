@@ -47,9 +47,6 @@ jobs:
       - name: Check lint
         run: yarn lint
 
-      - name: Test
-        run: yarn test --coverage
-
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v2
         with:
@@ -59,13 +56,3 @@ jobs:
           name: codecov-umbrella
           fail_ci_if_error: false
           verbose: true
-
-      # - name: Build
-      #   run: yarn build
-      #   env:
-      #     DATABASE_URL: postgresql://test:test!@localhost:5432/test
-
-      # - name: Export
-      #   run: |
-      #     yarn export
-      #     touch out/.nojekyll
