@@ -1,7 +1,6 @@
 'use client';
 
 import type {MouseEventHandler, ReactElement} from 'react';
-
 import clsx from 'clsx';
 import {twMerge} from 'tailwind-merge';
 

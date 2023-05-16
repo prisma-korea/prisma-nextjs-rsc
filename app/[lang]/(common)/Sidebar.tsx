@@ -1,12 +1,13 @@
 'use client';
 
-import {usePathname, useRouter} from 'next/navigation';
-
-import Link from 'next/link';
-import type {NavLink} from './Header';
 import type {ReactElement} from 'react';
-import type {Translates} from '../../../src/localization';
 import clsx from 'clsx';
+import Link from 'next/link';
+import {usePathname} from 'next/navigation';
+
+import type {Translates} from '../../../src/localization';
+
+import type {NavLink} from './Header';
 
 type Props = {
   t: Translates['nav'];
@@ -15,7 +16,6 @@ type Props = {
 
 export default function Sidebar({t, lang}: Props): ReactElement {
   const pathname = usePathname();
-  const router = useRouter();
   const navLinks: NavLink[] = [
     {
       name: t.users,

@@ -1,11 +1,13 @@
 'use client';
 
-import Header from './Header';
 import type {ReactElement} from 'react';
-import Sidebar from './Sidebar';
-import type {Translates} from '../../../src/localization';
-import clsx from 'clsx';
 import {useState} from 'react';
+import clsx from 'clsx';
+
+import type {Translates} from '../../../src/localization';
+
+import Header from './Header';
+import Sidebar from './Sidebar';
 
 type Props = {
   t: Translates['nav'];

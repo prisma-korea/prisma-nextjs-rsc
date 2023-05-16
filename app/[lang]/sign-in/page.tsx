@@ -1,9 +1,11 @@
-import {Inter} from 'next/font/google';
-import type {Locale} from '~/i18n';
-import Logo from 'public/assets/logo.svg';
 import type {ReactElement} from 'react';
 import clsx from 'clsx';
+import {Inter} from 'next/font/google';
+import Logo from 'public/assets/logo.svg';
+
 import {getTranslates} from '../../../src/localization';
+
+import type {Locale} from '~/i18n';
 
 const inter = Inter({subsets: ['latin']});
 

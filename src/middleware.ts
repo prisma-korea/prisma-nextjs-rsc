@@ -1,8 +1,12 @@
+import {match as matchLocale} from '@formatjs/intl-localematcher';
+// import {createMiddlewareSupabaseClient} from '@supabase/auth-helpers-nextjs';
 import Negotiator from 'negotiator';
 import type {NextRequest} from 'next/server';
 import {NextResponse} from 'next/server';
+
+// import {upsertUser} from './services/userService';
+// import {createMiddlewareSupabaseClient} from '@supabase/auth-helpers-nextjs';
 import {i18n} from '~/i18n';
-import {match as matchLocale} from '@formatjs/intl-localematcher';
 
 function getLocale(request: NextRequest): string | undefined {
   // Negotiator expects plain object so we need to transform headers
@@ -26,14 +30,24 @@ export async function middleware(
 
   const res = NextResponse.next();
 
+  // const supabase = createMiddlewareSupabaseClient({req, res});
+  // const {
+  //   data: {user},
+  // } = await supabase.auth.getUser();
+
+  // if (user) {
+  //   upsertUser({supabase, user});
+  // }
+
   // `/_next/` and `/api/` are ignored by the watcher, but we need to ignore files in `public` manually.
   // If you have one
-
   if (
     [
+      '/public/*',
+      '/((?!api|_next/static|_next/image|favicon.ico).*)',
       '/manifest.json',
       '/favicon.ico',
-      // Your other files in `public`
+      'service-worker.js',
     ].includes(pathname)
   ) {
     return;
@@ -54,7 +68,6 @@ export async function middleware(
 
   return res;
 }
-
 export const config = {
   // Matcher ignoring `/_next/`, `/api/` and `/assets/`
   matcher: ['/((?!api|assets|_next/static|_next/image|favicon.ico).*)'],

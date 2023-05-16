@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.2.7 | MIT License | https://tailwindcss.com
+! tailwindcss v3.3.2 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -31,6 +31,7 @@
 3. Use a more readable tab size.
 4. Use the user's configured `sans` font-family by default.
 5. Use the user's configured `sans` font-feature-settings by default.
+6. Use the user's configured `sans` font-variation-settings by default.
 */
 
 html {
@@ -47,6 +48,8 @@ html {
   /* 4 */
   font-feature-settings: normal;
   /* 5 */
+  font-variation-settings: normal;
+  /* 6 */
 }
 
 /*
@@ -666,6 +669,9 @@ a:active {
   --tw-pan-y:  ;
   --tw-pinch-zoom:  ;
   --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
   --tw-ordinal:  ;
   --tw-slashed-zero:  ;
   --tw-numeric-figure:  ;
@@ -713,6 +719,9 @@ a:active {
   --tw-pan-y:  ;
   --tw-pinch-zoom:  ;
   --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
   --tw-ordinal:  ;
   --tw-slashed-zero:  ;
   --tw-numeric-figure:  ;
@@ -780,7 +789,7 @@ input[type='search']::-webkit-search-decoration,
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.dark .bg-basic {
+:is(.dark .bg-basic) {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
@@ -790,7 +799,7 @@ input[type='search']::-webkit-search-decoration,
   background-color: rgb(240 242 245 / var(--tw-bg-opacity));
 }
 
-.dark .bg-paper {
+:is(.dark .bg-paper) {
   --tw-bg-opacity: 1;
   background-color: rgb(15 20 25 / var(--tw-bg-opacity));
 }
@@ -800,7 +809,7 @@ input[type='search']::-webkit-search-decoration,
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.dark .bg-modal {
+:is(.dark .bg-modal) {
   --tw-bg-opacity: 1;
   background-color: rgb(15 20 25 / var(--tw-bg-opacity));
 }
@@ -810,7 +819,7 @@ input[type='search']::-webkit-search-decoration,
   background-color: rgb(240 242 245 / var(--tw-bg-opacity));
 }
 
-.dark .bg-modal-background {
+:is(.dark .bg-modal-background) {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
@@ -820,7 +829,7 @@ input[type='search']::-webkit-search-decoration,
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
-.dark .text-basic {
+:is(.dark .text-basic) {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
@@ -830,7 +839,7 @@ input[type='search']::-webkit-search-decoration,
   color: rgb(190 190 190 / var(--tw-text-opacity));
 }
 
-.dark .text-disabled {
+:is(.dark .text-disabled) {
   --tw-text-opacity: 1;
   color: rgb(71 71 71 / var(--tw-text-opacity));
 }
@@ -840,7 +849,7 @@ input[type='search']::-webkit-search-decoration,
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
-.dark .text-contrast {
+:is(.dark .text-contrast) {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
@@ -851,7 +860,7 @@ input[type='search']::-webkit-search-decoration,
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
-.dark .body2 {
+:is(.dark .body2) {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
@@ -862,7 +871,7 @@ input[type='search']::-webkit-search-decoration,
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
-.dark .body3 {
+:is(.dark .body3) {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
@@ -1369,7 +1378,7 @@ input[type='search']::-webkit-search-decoration,
   background-color: rgb(240 242 245 / var(--tw-bg-opacity));
 }
 
-.dark .hover\:bg-paper:hover {
+:is(.dark .hover\:bg-paper:hover) {
   --tw-bg-opacity: 1;
   background-color: rgb(15 20 25 / var(--tw-bg-opacity));
 }
@@ -1465,7 +1474,7 @@ input[type='search']::-webkit-search-decoration,
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
-.dark .dark\:border-border-dark {
+:is(.dark .dark\:border-border-dark) {
   --tw-border-opacity: 1;
   border-color: rgb(51 51 51 / var(--tw-border-opacity));
 }

@@ -3,8 +3,9 @@ import '../../styles/output.css';
 
 import type {ReactElement, ReactNode} from 'react';
 
-import type {Locale} from '~/i18n';
 import RootProvider from '../../src/components/RootProvider';
+
+import type {Locale} from '~/i18n';
 
 type Props = {
   children: ReactNode;

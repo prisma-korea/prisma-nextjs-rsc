@@ -1,8 +1,10 @@
-import Container from '../(common)/Container';
-import type {Locale} from '~/i18n';
 import type {ReactElement} from 'react';
 import clsx from 'clsx';
+
 import {getTranslates} from '../../../src/localization';
+import Container from '../(common)/Container';
+
+import type {Locale} from '~/i18n';
 
 type Props = {
   params: {lang: Locale};

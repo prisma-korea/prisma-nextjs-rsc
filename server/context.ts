@@ -1,6 +1,5 @@
-import type {NextApiRequest, NextApiResponse} from 'next';
-
 import {PrismaClient} from '@prisma/client';
+import type {NextApiRequest, NextApiResponse} from 'next';
 
 export interface Context {
   prisma: PrismaClient;
