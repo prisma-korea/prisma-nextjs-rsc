@@ -39,20 +39,6 @@ export async function middleware(
   //   upsertUser({supabase, user});
   // }
 
-  // `/_next/` and `/api/` are ignored by the watcher, but we need to ignore files in `public` manually.
-  // If you have one
-  if (
-    [
-      '/public/*',
-      '/((?!api|_next/static|_next/image|favicon.ico).*)',
-      '/manifest.json',
-      '/favicon.ico',
-      'service-worker.js',
-    ].includes(pathname)
-  ) {
-    return;
-  }
-
   // Check if there is any supported locale in the pathname
   const pathnameIsMissingLocale = i18n.locales.every((locale) => {
     return !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`;
@@ -68,7 +54,8 @@ export async function middleware(
 
   return res;
 }
+
 export const config = {
   // Matcher ignoring `/_next/`, `/api/` and `/assets/`
-  matcher: ['/((?!api|assets|_next/static|_next/image|favicon.ico).*)'],
+  matcher: ['/((?!api|assets|_next/static|_next/image|public|favicon.ico).*)'],
 };

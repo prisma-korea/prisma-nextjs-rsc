@@ -1,9 +1,10 @@
+const withPWA = require('next-pwa')({
+  disable: process.env.NODE_ENV !== 'production',
+  dest: 'public',
+});
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  i18n: {
-    locales: ['en', 'ko'],
-    defaultLocale: 'en',
-  },
   swcMinify: true,
   reactStrictMode: true,
   experimental: {appDir: true},
@@ -38,6 +39,7 @@ const nextConfig = {
       },
     ];
   },
+  pageExtensions: ['mdx', 'md', 'jsx', 'js', 'tsx', 'ts'],
 };
 
-module.exports = nextConfig;
+module.exports = withPWA(nextConfig);
