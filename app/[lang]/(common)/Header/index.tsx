@@ -61,7 +61,7 @@ function NavMenus(
 }
 
 export default function Header(props: Props): ReactElement {
-  const {t, lang} = props;
+  const {t} = props;
   const [isDark, setIsDark] = useState(false);
   const {login} = useAuthContext();
 
@@ -93,7 +93,7 @@ export default function Header(props: Props): ReactElement {
             'flex flex-row items-center justify-between',
           )}
         >
-          <Link href={`${lang}/`} className="flex flex-row items-center">
+          <Link href="/" className="flex flex-row items-center">
             <Logo className="h-5 text-brand cursor-pointer" />
             <H1
               className={clsx(
