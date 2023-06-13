@@ -2297,6 +2297,48 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@floating-ui/core@npm:^1.3.0":
+  version: 1.3.0
+  resolution: "@floating-ui/core@npm:1.3.0"
+  checksum: 51d8acc9fd720cb217cae7074f5f923bf2b6e0bb4f228e03077254d0f6e49f9753b34a14b9abb1f11671c3b61284c487ab27c4ba1843bcd4397e7d72dc7d4a59
+  languageName: node
+  linkType: hard
+
+"@floating-ui/dom@npm:^1.3.0":
+  version: 1.3.0
+  resolution: "@floating-ui/dom@npm:1.3.0"
+  dependencies:
+    "@floating-ui/core": ^1.3.0
+  checksum: 39f92b3ce6de5d60a1cea951cbee22d0a9670fe4499b0128f0868a697d9288989994394d90cb99c3d1485aa432621e064d6b3c52914042a7d8d3c05897fb185d
+  languageName: node
+  linkType: hard
+
+"@floating-ui/react-dom@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "@floating-ui/react-dom@npm:2.0.1"
+  dependencies:
+    "@floating-ui/dom": ^1.3.0
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 00fef2cf69ac2b15952e47505fd9e23f6cc5c20a26adc707862932826d1682f3c30f83c9887abfc93574fdca2d34dd2fc00271527318b1db403549cd6bc9eb00
+  languageName: node
+  linkType: hard
+
+"@floating-ui/react@npm:^0.24.1":
+  version: 0.24.3
+  resolution: "@floating-ui/react@npm:0.24.3"
+  dependencies:
+    "@floating-ui/react-dom": ^2.0.1
+    aria-hidden: ^1.1.3
+    tabbable: ^6.0.1
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 14b5809ff7a6f539a251326e3e615964f50271404e84e4be50dd01bb64ccb5fb2ca1d3d2f7c4a673ef556606aef5555209c40f2046582b8961c60e88fd11ffb4
+  languageName: node
+  linkType: hard
+
 "@formatjs/intl-localematcher@npm:^0.4.0":
   version: 0.4.0
   resolution: "@formatjs/intl-localematcher@npm:0.4.0"
@@ -2572,6 +2614,13 @@ __metadata:
     tiny-glob: ^0.2.9
     tslib: ^2.4.0
   checksum: 118a1971120253740121a1db0a6658c21195b7da962acf9c124b507a3df707cfc97b0b84a16edcbd4352853b182e8337da9fc6e8e3d06c60d75ae4fb42321c75
+  languageName: node
+  linkType: hard
+
+"@popperjs/core@npm:^2.9.3":
+  version: 2.11.8
+  resolution: "@popperjs/core@npm:2.11.8"
+  checksum: e5c69fdebf52a4012f6a1f14817ca8e9599cb1be73dd1387e1785e2ed5e5f0862ff817f420a87c7fc532add1f88a12e25aeb010ffcbdc98eace3d55ce2139cf0
   languageName: node
   linkType: hard
 
@@ -3615,6 +3664,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"aria-hidden@npm:^1.1.3":
+  version: 1.2.3
+  resolution: "aria-hidden@npm:1.2.3"
+  dependencies:
+    tslib: ^2.0.0
+  checksum: 7d7d211629eef315e94ed3b064c6823d13617e609d3f9afab1c2ed86399bb8e90405f9bdd358a85506802766f3ecb468af985c67c846045a34b973bcc0289db9
+  languageName: node
+  linkType: hard
+
 "aria-query@npm:^5.0.0, aria-query@npm:^5.1.3":
   version: 5.1.3
   resolution: "aria-query@npm:5.1.3"
@@ -4114,6 +4172,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"classnames@npm:^2.2.6, classnames@npm:^2.3.2":
+  version: 2.3.2
+  resolution: "classnames@npm:2.3.2"
+  checksum: 2c62199789618d95545c872787137262e741f9db13328e216b093eea91c85ef2bfb152c1f9e63027204e2559a006a92eb74147d46c800a9f96297ae1d9f96f4e
+  languageName: node
+  linkType: hard
+
 "clean-stack@npm:^2.0.0":
   version: 2.2.0
   resolution: "clean-stack@npm:2.2.0"
@@ -4558,6 +4623,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"debounce@npm:^1.2.0":
+  version: 1.2.1
+  resolution: "debounce@npm:1.2.1"
+  checksum: 682a89506d9e54fb109526f4da255c5546102fbb8e3ae75eef3b04effaf5d4853756aee97475cd4650641869794e44f410eeb20ace2b18ea592287ab2038519e
+  languageName: node
+  linkType: hard
+
 "debug@npm:4, debug@npm:^4.1.0, debug@npm:^4.1.1, debug@npm:^4.3.2, debug@npm:^4.3.3, debug@npm:^4.3.4":
   version: 4.3.4
   resolution: "debug@npm:4.3.4"
@@ -4860,6 +4932,13 @@ __metadata:
   version: 16.0.3
   resolution: "dotenv@npm:16.0.3"
   checksum: afcf03f373d7a6d62c7e9afea6328e62851d627a4e73f2e12d0a8deae1cd375892004f3021883f8aec85932cd2834b091f568ced92b4774625b321db83b827f8
+  languageName: node
+  linkType: hard
+
+"easy-bem@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "easy-bem@npm:1.1.1"
+  checksum: c4d44a8cd792fddf9e1869bba543b7ec958080d56ea4764bb6e53b8238a0c2d075f0ee46b95f9dca40032b3e56e5bfc794a5da286eaf424d9db730c5ae91d656
   languageName: node
   linkType: hard
 
@@ -5620,6 +5699,33 @@ __metadata:
   version: 1.0.0
   resolution: "flatten-tailwindcss-theme@npm:1.0.0"
   checksum: 95a271f346d8c0cf2ea6e57a32a40f85a0d858e94db089d7483a13f52310d6e06de7b85bc3fb44f0701861e8d1f71809d20e28e731c30a4020f755427651ba86
+  languageName: node
+  linkType: hard
+
+"flowbite-react@npm:^0.4.7":
+  version: 0.4.7
+  resolution: "flowbite-react@npm:0.4.7"
+  dependencies:
+    "@floating-ui/react": ^0.24.1
+    classnames: ^2.3.2
+    flowbite: ^1.6.5
+    react-icons: ^4.8.0
+    react-indiana-drag-scroll: ^2.2.0
+  peerDependencies:
+    react: ^18
+    react-dom: ^18
+    tailwindcss: ^3
+  checksum: 8c598b180043d5f7e74a719654a8c2c3448ee2358e852707d36d23c06846b83cc012e50ebda0cd358d5924a86c89d37806b5b82df8bebfc3158991e4735a7afd
+  languageName: node
+  linkType: hard
+
+"flowbite@npm:^1.6.5":
+  version: 1.6.5
+  resolution: "flowbite@npm:1.6.5"
+  dependencies:
+    "@popperjs/core": ^2.9.3
+    mini-svg-data-uri: ^1.4.3
+  checksum: b6b7da2b3c07356e47dcec0ec4365462053b8bd0b8e6a7a5126588f0deffc31d783f5e7cd5288856a4a6562dab8d2555e0ea9b2c718e1d94a5c147655a8622f5
   languageName: node
   linkType: hard
 
@@ -7350,7 +7456,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mini-svg-data-uri@npm:^1.2.3":
+"mini-svg-data-uri@npm:^1.2.3, mini-svg-data-uri@npm:^1.4.3":
   version: 1.4.4
   resolution: "mini-svg-data-uri@npm:1.4.4"
   bin:
@@ -8387,6 +8493,7 @@ __metadata:
     eslint: ^8.42.0
     eslint-config-next: ^13.4.5
     flatten-tailwindcss-theme: ^1.0.0
+    flowbite-react: ^0.4.7
     husky: ^8.0.3
     jsdom: ^22.1.0
     negotiator: ^0.6.3
@@ -8550,6 +8657,29 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17 || ^18
   checksum: 8dc97e705d28d842c60fd79b0f07b8b045c458c234e3bf422baab87a844d0ebecbdf3e349538eaaa5c12366cd85169f60a52ed84dd31cdd99729899e424548bf
+  languageName: node
+  linkType: hard
+
+"react-icons@npm:^4.8.0":
+  version: 4.9.0
+  resolution: "react-icons@npm:4.9.0"
+  peerDependencies:
+    react: "*"
+  checksum: 69d1000d02349cf4baa78a0882aff09723d348d910256ea7489dea777abf10f158b27c1b5d3b1d2ec030e21320eae0afcc13f9c9d11afb85a8809c59a23a923c
+  languageName: node
+  linkType: hard
+
+"react-indiana-drag-scroll@npm:^2.2.0":
+  version: 2.2.0
+  resolution: "react-indiana-drag-scroll@npm:2.2.0"
+  dependencies:
+    classnames: ^2.2.6
+    debounce: ^1.2.0
+    easy-bem: ^1.1.1
+  peerDependencies:
+    react: ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
+  checksum: 763efd503c5f3815bc5bf713c2fdb886911aa2cc5986033acf3c48b01c51dd05e6aec54929161e20d3c55fce56219f5070e332e9ee02175190685770c1ec310d
   languageName: node
   linkType: hard
 
@@ -9593,6 +9723,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tabbable@npm:^6.0.1":
+  version: 6.1.2
+  resolution: "tabbable@npm:6.1.2"
+  checksum: 1e2d9af4f172a3793f491bab10263c26903c2be6a5c4ab723d69d1ba2054828d22a50add9ba7fc42735468871d40054d906fa4f0a9dc2fbd4feff875e84c1a89
+  languageName: node
+  linkType: hard
+
 "tailwind-merge@npm:^1.13.1":
   version: 1.13.1
   resolution: "tailwind-merge@npm:1.13.1"
@@ -9937,6 +10074,13 @@ __metadata:
   version: 1.14.1
   resolution: "tslib@npm:1.14.1"
   checksum: dbe628ef87f66691d5d2959b3e41b9ca0045c3ee3c7c7b906cc1e328b39f199bb1ad9e671c39025bd56122ac57dfbf7385a94843b1cc07c60a4db74795829acd
+  languageName: node
+  linkType: hard
+
+"tslib@npm:^2.0.0":
+  version: 2.5.3
+  resolution: "tslib@npm:2.5.3"
+  checksum: 88902b309afaf83259131c1e13da1dceb0ad1682a213143a1346a649143924d78cf3760c448b84d796938fd76127183894f8d85cbb3bf9c4fddbfcc140c0003c
   languageName: node
   linkType: hard
 
