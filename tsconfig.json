@@ -20,6 +20,7 @@
       "~/*": ["./src/*"],
       "@/public/*": ["./public/*"],
       "@/assets/*": ["./assets/*"],
+      "@/styles/*": ["./styles/*"],
       "@/app/*": ["./app/[lang]/*"],
       "@/server/*": ["./server/*"],
     }

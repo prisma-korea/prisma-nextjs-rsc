@@ -1,10 +1,9 @@
 import 'server-only';
-import '../../styles/output.css';
+import '@/styles/output.css';
 
 import type {ReactElement, ReactNode} from 'react';
 
-import RootProvider from '../../src/components/RootProvider';
-
+import RootProvider from '~/components/RootProvider';
 import type {Locale} from '~/i18n';
 
 type Props = {
