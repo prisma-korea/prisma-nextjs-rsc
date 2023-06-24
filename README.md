@@ -12,7 +12,7 @@ See [Contributing](./CONTRIBUTING.md) for installation.
 
 ## Localization with variable 
 
-#### 1. Add text with variable in json ####
+### 1. Add text with variable in json ###
 
     // en.json
     
@@ -20,7 +20,7 @@ See [Contributing](./CONTRIBUTING.md) for installation.
       "intro": "Hello my name is {{ name }} and {{ age }} years old"
     },
 
-#### 2. Get the `t` from `getTranslates` ####
+### 2. Get the `t` from `getTranslates` ###
 
 ```tsx
 
