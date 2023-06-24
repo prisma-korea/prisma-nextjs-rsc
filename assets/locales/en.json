@@ -23,7 +23,7 @@
     "worksNormally": "Works normally"
   },
   "home": {
-    "title": "Home"
+    "title": "welcome my name is {{ name }} and {{ age }}"
   },
   "signIn": {
     "signIn": "Sign in"

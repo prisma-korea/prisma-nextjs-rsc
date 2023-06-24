@@ -2,7 +2,7 @@ import type {Locale} from './i18n';
 
 // We enumerate all dictionaries here for better linting and typescript support
 // We also get the default import for cleaner types
-const translates = {
+const translates: Record<Locale, any> = {
   en: () =>
     import('../assets/locales/en.json').then((module) => module.default),
   ko: () =>
@@ -11,10 +11,6 @@ const translates = {
 };
 
 export type Translates = Awaited<ReturnType<(typeof translates)['en']>>;
-
-export type Translation = {
-  [K in keyof Translates]: Translates[K];
-};
 
 type LocalizationVariables = (
   text: string,
@@ -43,6 +39,7 @@ export const getTranslates = async (locale: Locale): Promise<Translates> => {
   }
 
   const translation = await translates[locale]();
+
   const formattedTranslation = {
     ...translation,
     t: variableFormatter(),
