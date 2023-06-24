@@ -23,7 +23,7 @@
     "worksNormally": "정상 작동"
   },
   "home": {
-    "title": "환영합니다 제 이름은 {{ name }} 이고 나이는 {{ age }} 입니다."
+    "title": "홈"
   },
   "signIn": {
     "signIn": "로그인"

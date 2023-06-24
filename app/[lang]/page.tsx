@@ -14,14 +14,12 @@ type Props = {
 export default async function Page({
   params: {lang},
 }: Props): Promise<ReactElement> {
-  const {t, langs, nav, home} = await getTranslates(lang);
+  const {langs, nav, home} = await getTranslates(lang);
 
   return (
     <Container lang={lang} langs={langs} t={nav}>
       <div className={clsx('flex-1 bg-paper', 'flex flex-col')}>
-        <p className={clsx('p-8 text-basic')}>
-          {t(home.title, {name: '김기훈', age: 30})}
-        </p>
+        <p className={clsx('p-8 text-basic')}>{home.title}</p>
       </div>
     </Container>
   );
