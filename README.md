@@ -28,7 +28,7 @@ const {t, home} = await getTranslates(lang);
 
 ```
 
-#### 3. Inside the `t` function, put json text and variables as parameters ####
+### 3. Inside the `t` function, put json text and variables as parameters ###
 
 
 ```tsx
