@@ -9,6 +9,9 @@
 
 See [Contributing](./CONTRIBUTING.md) for installation.
 
+## Feature
+GraphQL api support with codegen is available at https://github.com/prisma-korea/prisma-nextjs-rsc/pulls.
+
 
 ## Localization with variable 
 

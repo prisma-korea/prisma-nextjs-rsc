@@ -28,6 +28,7 @@
   "prettier.configPath": ".prettierrc.js",
   "cSpell.words": [
     "clsx",
+    "codegen",
     "formatjs",
     "hyochan",
     "isready",
