@@ -5,10 +5,9 @@ import {useState} from 'react';
 import clsx from 'clsx';
 import localFont from 'next/font/local';
 
-import type {Translates} from '../../../src/localization';
-
-import Header from './Header';
-import Sidebar from './Sidebar';
+import Header from '~/components/uis/Header';
+import Sidebar from '~/components/uis/Sidebar';
+import type {Translates} from '~/src/localization';
 
 type Props = {
   t: Translates['nav'];

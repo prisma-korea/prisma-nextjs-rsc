@@ -6,15 +6,14 @@ import HamburgerMenu from 'react-hamburger-menu';
 import clsx from 'clsx';
 import {Inter} from 'next/font/google';
 import Link from 'next/link';
-import Github from 'public/assets/github.svg';
-import Logo from 'public/assets/logo.svg';
 
-import {useAuthContext} from '../../../../src/components/AuthProvider';
-import {H1} from '../../../../src/components/Typography';
-import type {Translates} from '../../../../src/localization';
-import {isDarkMode, toggleTheme} from '../../../../src/utils/theme';
-
-import SwitchToggle from './SwitchToggle';
+import SwitchToggle from '~/components/uis/SwitchToggle';
+import Github from '~/public/assets/github.svg';
+import Logo from '~/public/assets/logo.svg';
+import {useAuthContext} from '~/src/components/providers/AuthProvider';
+import {H1} from '~/src/components/providers/Typography';
+import type {Translates} from '~/src/localization';
+import {isDarkMode, toggleTheme} from '~/src/utils/theme';
 
 const inter = Inter({subsets: ['latin']});
 
@@ -77,7 +76,7 @@ export default function Header(props: Props): ReactElement {
         'pl-3 pr-7',
       )}
     >
-      <div className={clsx('flex-1 h-14 ', 'flex flex-row items-center')}>
+      <div className={clsx('flex-1 h-14', 'flex flex-row items-center')}>
         <NavMenus
           {...props}
           navLinks={navLinks}

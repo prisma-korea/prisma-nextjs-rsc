@@ -1,4 +1,4 @@
-import type {Locale} from './i18n';
+import type {Locale} from '~/src/i18n';
 
 // We enumerate all dictionaries here for better linting and typescript support
 // We also get the default import for cleaner types

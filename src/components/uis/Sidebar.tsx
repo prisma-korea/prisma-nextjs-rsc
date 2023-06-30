@@ -8,9 +8,8 @@ import Link from 'next/link';
 import {usePathname} from 'next/navigation';
 import {signOut} from 'next-auth/react';
 
-import type {Translates} from '../../../src/localization';
-
-import type {NavLink} from './Header';
+import type {NavLink} from '~/src/components/uis/Header';
+import type {Translates} from '~/src/localization';
 
 type Props = {
   t: Translates['nav'];

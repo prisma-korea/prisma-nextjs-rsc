@@ -1,23 +1,14 @@
 import type {ReactElement} from 'react';
 import clsx from 'clsx';
-import {Inter} from 'next/font/google';
 import Logo from 'public/assets/logo.svg';
 
-import {getTranslates} from '../../../src/localization';
-
 import type {Locale} from '~/i18n';
-
-const inter = Inter({subsets: ['latin']});
 
 type Props = {
   params: {lang: Locale};
 };
 
-export default async function Page({
-  params: {lang},
-}: Props): Promise<ReactElement> {
-  const {signIn} = await getTranslates(lang);
-
+export default async function Page({}: Props): Promise<ReactElement> {
   return (
     <div
       className={clsx(

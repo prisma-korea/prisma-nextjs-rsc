@@ -1,18 +1,20 @@
-import {defineConfig} from 'vitest/config';
-import path from 'path';
 import react from '@vitejs/plugin-react';
+// import path from 'path';
+import {defineConfig} from 'vitest/config';
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
   resolve: {
-    alias: {
-      '@next': path.resolve(__dirname, './node_modules/@next'),
-      '~': path.resolve(__dirname, './src/*'),
-      '@/public': path.resolve(__dirname, './public/*'),
-      '@/app': path.resolve(__dirname, './app/[lang]/*'),
-      '@/server': path.resolve(__dirname, './server/*'),
-    },
+    // alias: {
+    //   '@next': path.resolve(__dirname, './node_modules/@next'),
+    //   '~/*': path.resolve(__dirname, './src/*'),
+    //   '~/public': path.resolve(__dirname, './public/*'),
+    //   '~/app': path.resolve(__dirname, './app/[lang]/*'),
+    //   '~/server': path.resolve(__dirname, './server/*'),
+    //   '~/src': path.resolve(__dirname, './src/*'),
+    //   '~/components': path.resolve(__dirname, './src/components/*'),
+    // },
   },
   test: {
     environment: 'jsdom',

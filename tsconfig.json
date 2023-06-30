@@ -18,11 +18,13 @@
     "baseUrl": ".",
     "paths": {
       "~/*": ["./src/*"],
-      "@/public/*": ["./public/*"],
-      "@/assets/*": ["./assets/*"],
-      "@/styles/*": ["./styles/*"],
-      "@/app/*": ["./app/[lang]/*"],
-      "@/server/*": ["./server/*"],
+      "~/public/*": ["./public/*"],
+      "~/assets/*": ["./assets/*"],
+      "~/styles/*": ["./styles/*"],
+      "~/app/*": ["./app/[lang]/*"],
+      "~/server/*": ["./server/*"],
+      "~/src/*": ["./src/*"],
+      "~/components/*": ["./src/components/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

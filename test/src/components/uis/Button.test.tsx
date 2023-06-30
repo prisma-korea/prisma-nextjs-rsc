@@ -3,7 +3,7 @@ import 'next/font/google';
 import {render, screen, within} from '@testing-library/react';
 import {beforeAll, expect, test, vi} from 'vitest';
 
-import Button from '../../app/[lang]/(common)/Button';
+import Button from '../../../../src/components/uis/Button';
 
 beforeAll(() => {
   vi.mock('next/font/google', () => {
